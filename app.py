@@ -1,21 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[7]:
 
 
 import streamlit as st
-import subprocess
-
-# Install openpyxl
-subprocess.run(["pip", "install", "openpyxl"])
-
-# Now you can import and use openpyxl
 import openpyxl
-
-st.title("Streamlit App with openpyxl")
-
-# Your Streamlit app code here...
 import pandas as pd
 
 # Excel file URL on GitHub
