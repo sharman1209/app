@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[2]:
 
 
 import streamlit as st
 import pandas as pd
+
+# Excel file URL on GitHub
+excel_file_url = 'https://github.com/sharman1209/app/raw/main/data.xlsx'
+
+# Read data from the URL
+school_df = pd.read_excel(excel_file_url, sheet_name='List TM Interim Sites')
 
 # Function to toggle the search method and update the interface accordingly
 def toggle_search_method():
@@ -28,18 +34,6 @@ def toggle_search_method():
         manual_search_state_button = st.button("Search")
         if manual_search_state_button and selected_state != 'Select':
             search_school_info_by_state(selected_state)
-
-# Read school data from the Excel file into a DataFrame
-# excel_file_url = 'https://github.com/sharman1209/TM/raw/main/4221%20TM%20UNIFIBIZ.xlsx'
-# school_df = pd.read_excel(excel_file_url, sheet_name='List TM Interim Sites')
-
-# Excel file URL on GitHub
-excel_file_url = 'https://github.com/sharman1209/app/raw/main/data.xlsx'
-
-# Read data from the URL
-school_df = pd.read_excel(excel_file_url, sheet_name='List TM Interim Sites')
-
-# Now use 'school_df' in your Streamlit app
 
 # Function to filter school codes based on the entered query (case-insensitive)
 def filter_school_codes(query):
