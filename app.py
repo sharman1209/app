@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[ ]:
 
 
 import streamlit as st
@@ -12,6 +12,12 @@ excel_file_url = 'https://github.com/sharman1209/app/raw/main/data.xlsx'
 
 # Read data from the URL
 school_df = pd.read_excel(excel_file_url, sheet_name='List TM Interim Sites')
+
+# Display the DataFrame
+st.write(school_df)
+
+# Export DataFrame to HTML for embedding in your web app
+html_code = school_df.to_html()
 
 # Function to toggle the search method and update the interface accordingly
 def toggle_search_method():
